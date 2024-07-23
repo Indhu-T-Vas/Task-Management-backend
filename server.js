@@ -16,6 +16,10 @@ app.use(express.json()); // to accept JSON Data
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("API is Running Successfully");
+});
+
 // function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
 //   res.header(
@@ -37,14 +41,11 @@ app.use("/api/task", taskRoutes);
 
 //----------------------------------------Deployment-------------------------------------------------//
 
-const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === "production") {
-  app.use;
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is Running Successfully");
-  });
-}
+// const __dirname1 = path.resolve();
+// if (process.env.NODE_ENV === "production") {
+//   app.use;
+// } else {
+// }
 //----------------------------------------Deployment-------------------------------------------------//
 
 app.use(notFound);
